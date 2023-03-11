@@ -20,7 +20,7 @@ struct ContentView: View {
                     phoneSender.shareSheet.toggle()
                 }
                 .buttonStyle(.bordered)
-                .sheet(isPresented: $phoneSender.shareSheetPresented) {
+                .sheet(isPresented: $phoneSender.shareSheet) {
                     ShareKeys(message: message)
                         .environmentObject(phoneSender)
                 }
@@ -28,7 +28,7 @@ struct ContentView: View {
                 Text("Apple Watch Not Paired")
             }
         }
-        .onChange(of: phoneSender.shareState) { newState in
+        .onChange(of: phoneSender.shareSheet) { newState in
             if newState == .shared {
                 phoneSender.shareSheet.toggle()
             }
