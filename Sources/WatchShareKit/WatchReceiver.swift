@@ -10,13 +10,13 @@
 import SwiftUI
 import WatchConnectivity
 
-class WatchReceiver: NSObject, ObservableObject {
-    @Published var gotMessage: [String: Any]?
-    @Published var gotData: Data?
+public class WatchReceiver: NSObject, ObservableObject {
+    @Published public var gotMessage: [String: Any]?
+    @Published public var gotData: Data?
 
-    let session: WCSession
+    public let session: WCSession
 
-    init(session: WCSession = .default) {
+    public init(session: WCSession = .default) {
         self.session = session
         super.init()
         if WCSession.isSupported() {
@@ -27,10 +27,7 @@ class WatchReceiver: NSObject, ObservableObject {
 }
 
 extension WatchReceiver: WCSessionDelegate {
-    func sessionDidBecomeInactive(_ session: WCSession) {}
-    func sessionDidDeactivate(_ session: WCSession) {}
-
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         if let error = error {
             NSLog("WatchShareKit | WatchReceiver | ❌ Session activation failed with error: \(error.localizedDescription)")
             return
@@ -38,13 +35,13 @@ extension WatchReceiver: WCSessionDelegate {
         NSLog("WatchShareKit | WatchReceiver | ✅ Session activated with state: \(activationState.rawValue)")
     }
 
-    func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
+    public func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
         DispatchQueue.main.async {
             self.gotMessage = message
         }
     }
 
-    func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
+    public func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
         DispatchQueue.main.async {
             self.gotData = messageData
         }

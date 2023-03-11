@@ -7,19 +7,20 @@
 
 import SwiftUI
 
-struct ShareKeys: View {
+#if os(iOS)
+public struct ShareKeys: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var phoneSender: PhoneSender
 
-    let data: Data?
-    let message: [String: Any]?
+    public let data: Data?
+    public let message: [String: Any]?
 
-    init(data: Data? = nil, message: [String: Any]? = nil) {
+    public init(data: Data? = nil, message: [String: Any]? = nil) {
         self.data = data
         self.message = message
     }
 
-    var body: some View {
+    public var body: some View {
         VStack {
             HStack {
                 Spacer()
@@ -109,3 +110,4 @@ struct ShareKeysView_Previews: PreviewProvider {
         .preferredColorScheme(.dark)
     }
 }
+#endif
