@@ -16,8 +16,9 @@
 
 ## Usage
 
-- [Download zip package](https://github.com/Aayush9029/WatchShareKit/archive/refs/heads/main.zip)
-- Drag to your project
+Add `https://github.com/Aayush9029/WatchShareKit/` project dependency on Xcode
+
+
 
 ### 📲 Sender 
 
