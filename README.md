@@ -54,7 +54,7 @@ struct ContentView: View {
 
 You can also use `.onAppear` and toggle sheet accordingly for seamingless experience.
 
-### ⌚ Reciever 
+### ⌚ Receiver 
 
 ```swift
 
