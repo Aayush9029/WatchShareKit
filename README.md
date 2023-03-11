@@ -25,9 +25,9 @@ import WatchConnectivity
 import WatchShareKit
 
 struct ContentView: View {
-    @State private var message: [String: Any] = ["your-key": "value"]
     @StateObject var phoneSender: PhoneSender = .init()
-
+    @State private var message: [String: Any] = ["your-key": "value"]
+    
     var body: some View {
         VStack {
             if phoneSender.isPaired() {
@@ -52,7 +52,13 @@ You can also use `.onAppear` and toggle sheet accordingly for seamingless experi
 
 ### ⌚ Reciever 
 
-```swiftstruct ContentView: View {
+```swift
+
+import SwiftUI
+import WatchConnectivity
+import WatchShareKit
+
+struct ContentView: View {
     @StateObject var watchReceiver: WatchReceiver = .init()
     
     var body: some View {
