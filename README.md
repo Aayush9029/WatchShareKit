@@ -16,7 +16,7 @@
 
 ## Usage
 
-- Download as zip
+- [Download zip package](https://github.com/Aayush9029/WatchShareKit/archive/refs/heads/main.zip)
 - Drag to your project
 
 ### 📲 Sender 
