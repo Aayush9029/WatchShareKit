@@ -44,6 +44,11 @@ struct ContentView: View {
     }
 }
 
-
-
 ```
+
+You can also use `.onAppear` and toggle sheet accordingly for seamingless experience.
+
+
+### Used by
+
+[Native Twitch](https://github.com/Aayush9029/NativeTwitch/tree/v3)
