@@ -78,8 +78,16 @@ struct ShareKeysView_Previews: PreviewProvider {
         VStack {
             Text("Light Mode")
                 .sheet(isPresented: .constant(true)) {
-                    ShareKeys()
-                        .environmentObject(PhoneSender())
+                    Group {
+                        if #available(iOS 16.4, *) {
+                            ShareKeys()
+                                .presentationCornerRadius(38)
+                        } else {
+                            ShareKeys()
+                        }
+                    }
+                    .environmentObject(PhoneSender())
+                    .preferredColorScheme(.light)
                 }
         }
 
@@ -89,7 +97,7 @@ struct ShareKeysView_Previews: PreviewProvider {
                     Group {
                         if #available(iOS 16.4, *) {
                             ShareKeys()
-                                .presentationCornerRadius(42)
+                                .presentationCornerRadius(38)
                         } else {
                             ShareKeys()
                         }

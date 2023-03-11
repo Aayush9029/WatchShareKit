@@ -30,7 +30,7 @@ enum ShareState {
 }
 
 class PhoneSender: NSObject, ObservableObject {
-    @Published var shareSheetPresented: Bool = false
+    @Published var shareSheet: Bool = false
     @Published var sheetData: SheetData = .defaultSheet
     @Published var shareState: ShareState = .none
 

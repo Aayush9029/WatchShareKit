@@ -15,15 +15,14 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            if !phoneSender.isPaired() {
+            if phoneSender.isPaired() {
                 Button("Share Password") {
-                    phoneSender.shareSheetPresented.toggle()
+                    phoneSender.shareSheet.toggle()
                 }
                 .buttonStyle(.bordered)
                 .sheet(isPresented: $phoneSender.shareSheetPresented) {
                     ShareKeys(message: message)
                         .environmentObject(phoneSender)
-                        .presentationCornerRadius(32)
                 }
             } else {
                 Text("Apple Watch Not Paired")
@@ -31,7 +30,7 @@ struct ContentView: View {
         }
         .onChange(of: phoneSender.shareState) { newState in
             if newState == .shared {
-                phoneSender.shareSheetPresented.toggle()
+                phoneSender.shareSheet.toggle()
             }
         }
     }
