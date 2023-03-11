@@ -23,6 +23,7 @@ struct ContentView: View {
                 .sheet(isPresented: $phoneSender.shareSheetPresented) {
                     ShareKeys(message: message)
                         .environmentObject(phoneSender)
+                        .presentationCornerRadius(32)
                 }
             } else {
                 Text("Apple Watch Not Paired")

@@ -27,8 +27,8 @@ struct ShareKeys: View {
                     dismiss()
                 } label: {
                     Image(systemName: "xmark.circle.fill")
-                        .foregroundStyle(.secondary, .tertiary)
-                        .imageScale(.large)
+                        .foregroundStyle(.secondary, .quaternary)
+                        .font(.title)
                 }
                 .buttonStyle(.plain)
             }
@@ -86,9 +86,16 @@ struct ShareKeysView_Previews: PreviewProvider {
         VStack {
             Text("Dark Mode")
                 .sheet(isPresented: .constant(true)) {
-                    ShareKeys()
-                        .environmentObject(PhoneSender())
-                        .preferredColorScheme(.dark)
+                    Group {
+                        if #available(iOS 16.4, *) {
+                            ShareKeys()
+                                .presentationCornerRadius(42)
+                        } else {
+                            ShareKeys()
+                        }
+                    }
+                    .environmentObject(PhoneSender())
+                    .preferredColorScheme(.dark)
                 }
         }
         .preferredColorScheme(.dark)
