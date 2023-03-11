@@ -7,6 +7,7 @@ let package = Package(
     name: "WatchShareKit",
     platforms: [
         .iOS(.v16),
+        .watchOS(.v8),
     ],
     products: [
         .library(
