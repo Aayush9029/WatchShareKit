@@ -34,7 +34,7 @@ struct ContentView: View {
                 Button("Share Password") {
                     phoneSender.shareSheet.toggle()
                 }
-                .sheet(isPresented: $phoneSender.shareSheetPresented) {
+                .sheet(isPresented: $phoneSender.shareSheet) {
                     ShareKeys(message: message)
                         .environmentObject(phoneSender)
                 }
