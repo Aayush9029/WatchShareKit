@@ -16,6 +16,9 @@
 
 ## Usage
 
+- Download as zip
+- Drag to your project
+
 ### 📲 Sender 
 
 ```swift
@@ -76,3 +79,8 @@ You can also use `.onChange` to manipulate the data accordingly.
 ---
 
 Used by [Native Twitch](https://github.com/Aayush9029/NativeTwitch/tree/v3)
+
+
+### TODO:
+- Create remote package.
+- Support shared decodable structs for keys.
