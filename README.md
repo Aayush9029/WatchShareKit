@@ -14,7 +14,9 @@
 
 ---
 
-### Usage
+## Usage
+
+### 📲 Sender 
 
 ```swift
 
@@ -48,7 +50,23 @@ struct ContentView: View {
 
 You can also use `.onAppear` and toggle sheet accordingly for seamingless experience.
 
+### ⌚ Reciever 
 
-### Used by
+```swiftstruct ContentView: View {
+    @StateObject var watchReceiver: WatchReceiver = .init()
+    
+    var body: some View {
+        VStack {
+            if let message = watchReceiver.gotMessage {
+                Text(message["your-key"].value)
+            }
+        }
+    }
+}
+```
 
-[Native Twitch](https://github.com/Aayush9029/NativeTwitch/tree/v3)
+You can also use `.onChange` to manipulate the data accordingly.
+
+---
+
+Used by [Native Twitch](https://github.com/Aayush9029/NativeTwitch/tree/v3)
