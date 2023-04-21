@@ -25,7 +25,6 @@ Add `https://github.com/Aayush9029/WatchShareKit/` project dependency on Xcode
 ```swift
 
 import SwiftUI
-import WatchConnectivity
 import WatchShareKit
 
 struct ContentView: View {
