@@ -58,7 +58,6 @@ You can also use `.onAppear` and toggle sheet accordingly for seamingless experi
 ```swift
 
 import SwiftUI
-import WatchConnectivity
 import WatchShareKit
 
 struct ContentView: View {
