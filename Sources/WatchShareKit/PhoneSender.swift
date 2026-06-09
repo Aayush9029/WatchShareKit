@@ -10,25 +10,6 @@
 import SwiftUI
 import WatchConnectivity
 
-public struct SheetData: Equatable, Sendable {
-    public var title: String
-    public var detail: String
-    public var button: String
-    public var image: String
-    public let done: String = "Done"
-
-    public static let defaultSheet = SheetData(
-        title: "Share Password",
-        detail: "Do you want to share password with Apple Watch?",
-        button: "Share Password",
-        image: "key.fill"
-    )
-}
-
-public enum ShareState: Equatable, Sendable {
-    case none, initialized, sharing, shared, error
-}
-
 public class PhoneSender: NSObject, ObservableObject {
     @Published public var shareSheet: Bool = false
     @Published public var sheetData: SheetData = .defaultSheet

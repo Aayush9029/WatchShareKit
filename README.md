@@ -79,6 +79,15 @@ You can also use `.onChange` to manipulate the data accordingly.
 
 Used by [Native Twitch](https://github.com/Aayush9029/NativeTwitch/tree/v3)
 
+## macOS demo
+
+The package also includes a small SwiftUI macOS demo for platform-neutral payload/config/state types. It does not create or simulate a WatchConnectivity session.
+
+```bash
+swift run WatchShareKitMacDemo
+swift run WatchShareKitMacDemo --smoke-test
+```
+
 
 ### TODO:
 - Create remote package.
