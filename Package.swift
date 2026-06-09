@@ -20,4 +20,7 @@ let package = Package(
             name: "WatchShareKit",
             dependencies: [],
             path: "Sources"),
+        .testTarget(
+            name: "WatchShareKitTests",
+            dependencies: ["WatchShareKit"]),
     ])

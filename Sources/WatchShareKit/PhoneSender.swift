@@ -10,7 +10,7 @@
 import SwiftUI
 import WatchConnectivity
 
-public struct SheetData {
+public struct SheetData: Equatable, Sendable {
     public var title: String
     public var detail: String
     public var button: String
@@ -25,7 +25,7 @@ public struct SheetData {
     )
 }
 
-public enum ShareState {
+public enum ShareState: Equatable, Sendable {
     case none, initialized, sharing, shared, error
 }
 
